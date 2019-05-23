@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>The Psychic Game</h1>
+        <p>Guess What Letter I Am Thinking Of</p>
+        <p>Wins :<span id="wins"></span></p>
+        <p>Losses :<span id="losses"></span></p>
+        <p>Guesses Left <span id="guessesLeft">9</span</p>
+        <p>Your Guesses so Far<span id="userLetter"></span</p>
+
+
+
+
+        <script type="text/javascript">
+
+
+        // Computer needs to choose a letter from the alphabet 
+        var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];   
+      
+        // wins will change if the guess is correct wins++
+        var wins = 0;
+        // losses will change if guess is incorrect losses++
+        var losses =0;
+        // guesses left will go down after each guess if incorrec guessesLeft--
+        var guessesLeft = 9;
+        // computer will loop through computerChoice and select a letter at random
+        var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+        // console.log(computerGuess);
+
+        var userLetter = [];
+        var point =  document.getElementById("wins");
+        var down = document.getElementById("losses");
+        var over = document.getElementById("guessesLeft");
+        var numb = document.getElementById("userLetter");
+
+
+        // on the document on the release of a key we will run function event which will point to the guessLetter and be loaded into var userLetters
+        // first thing we will do is look if it is the correct key
+        // if its incorrect it will add it to letters guessed
+        // if letters guessed is 0 - if so reset game - which means set guessed to 9 and empty guess aray
+
+        function resetGame(){
+       
+            userLetter = [];
+            guessesLeft = 9;
+            computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+     console.log(computerGuess);
+        }
+
+        document.onkeypress = function(event){
+            numb.innerHTML =userLetter
+
+
+
+
+
+           // User guess will be input from document on key up 
+           var guessLetter = event.key
+            
+           userLetter.push(guessLetter)
+        //    console.log(userLetter);
+
+
+            if (computerGuess === guessLetter){
+                wins++
+                // var point =  document.getElementById('wins');
+            point.innerHTML = wins;
+                console.log("Yipeee");
+                console.log(wins)
+                // reset game
+                resetGame();
+            }
+            else {
+                if (guessesLeft === 0){
+                 losses++ 
+                 down.innerHTML = losses;
+                 resetGame();
+                 }
+                else {
+                guessesLeft--
+                over.innerHTML = guessesLeft;
+                }
+
+
+// inner HTML reposndes to classes and ID's text content does
+
+
+
+console.log(guessesLeft);
+console.log(losses);
+            }
+
+
+
+
+     
+
+
+            // action function will take letter guessed and push into guessedLetter var
+            // guessLeft decreaes by one  --
+            // check to see if guesses left is = to 0 
+            // incrament losses by one
+            // reset game 
+
+
+      
+
+        
+
+
+            
+
+
+
+
+
+
+
+
+
+
+//end of on key press
+        }
+
+        </script>
+        
+    </body>
+</html>
