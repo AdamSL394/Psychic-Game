@@ -12,7 +12,7 @@
         <p>Wins :<span id="wins"></span></p>
         <p>Losses :<span id="losses"></span></p>
         <p>Guesses Left <span id="guessesLeft">9</span</p>
-        <p>Your Guesses so Far<span id="userLetter"></span</p>
+        <p>Your Guesses so Far <span id="userLetter"> </span</p>
 
 
 
@@ -54,16 +54,17 @@
         }
 
         document.onkeypress = function(event){
-            numb.innerHTML =userLetter
-
-
-
-
-
+            
+            //numb.innerHTML =userLetter
            // User guess will be input from document on key up 
            var guessLetter = event.key
             
-           userLetter.push(guessLetter)
+            if (!userLetter.includes(guessLetter)){
+                userLetter.push(guessLetter)
+                numb.innerHTML = userLetter
+                guessesLeft--
+            }
+          
         //    console.log(userLetter);
 
 
@@ -81,9 +82,10 @@
                  losses++ 
                  down.innerHTML = losses;
                  resetGame();
+                 alert("You lost!")
                  }
                 else {
-                guessesLeft--
+                //guessesLeft--
                 over.innerHTML = guessesLeft;
                 }
 
