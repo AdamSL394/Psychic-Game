@@ -18,3 +18,10 @@ This will show a layout incorporating CSS and Bootstrap. Press any letter key to
 <li> Bootstrap
 </ol>
 
+#Local Development Environment for website Repo
+The following will get up and running locally.
+
+Author
+Adam Lehrer
+
+![Psychic-Game](https://adamsl394.github.io/Psychic-Game/)`
