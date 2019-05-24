@@ -4,139 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="../Psychic-Game/assets/css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../Psychic-Game/assets/css/style.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="../Psychic-Game/assets/javascript/game.js"></script>
         <title>Document</title>
 
     </head>
     <body>
-        <h1>The Psychic Game</h1>
-        <p>Guess What Letter I Am Thinking Of</p>
-        <p>Wins :<span id="wins"></span></p>
-        <p>Losses :<span id="losses"></span></p>
-        <p>Guesses Left <span id="guessesLeft">9</span</p>
-        <p>Your Guesses so Far <span id="userLetter"> </span</p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <p class="display-4">The Psychic Game</p>
+                <p class="lead">Guess What Letter I Am Thinking Of Press Any Key to Start Playing!</p>
+            </div>
+            </div>
 
-
-
-
-        <script type="text/javascript">
-
-
-        // Computer needs to choose a letter from the alphabet 
-        var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];   
-      
-        // wins will change if the guess is correct wins++
-        var wins = 0;
-        // losses will change if guess is incorrect losses++
-        var losses =0;
-        // guesses left will go down after each guess if incorrec guessesLeft--
-        var guessesLeft = 9;
-        // computer will loop through computerChoice and select a letter at random
-        var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-        // console.log(computerGuess);
-
-        var userLetter = [];
-        var point =  document.getElementById("wins");
-        var down = document.getElementById("losses");
-        var over = document.getElementById("guessesLeft");
-        var numb = document.getElementById("userLetter");
-
-
-        // on the document on the release of a key we will run function event which will point to the guessLetter and be loaded into var userLetters
-        // first thing we will do is look if it is the correct key
-        // if its incorrect it will add it to letters guessed
-        // if letters guessed is 0 - if so reset game - which means set guessed to 9 and empty guess aray
-
-        function resetGame(){
-       
-            userLetter = [];
-            guessesLeft = 9;
-            computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-     console.log(computerGuess);
-        }
-
-        document.onkeypress = function(event){
-            
-            //numb.innerHTML =userLetter
-           // User guess will be input from document on key up 
-           var guessLetter = event.key
-            
-            if (!userLetter.includes(guessLetter)){
-                userLetter.push(guessLetter)
-                numb.innerHTML = userLetter
-                guessesLeft--
-            }
-          
-        //    console.log(userLetter);
-
-
-            if (computerGuess === guessLetter){
-                wins++
-                // var point =  document.getElementById('wins');
-            point.innerHTML = wins;
-                console.log("Yipeee");
-                console.log(wins)
-                // reset game
-                resetGame();
-            }
-            else {
-                if (guessesLeft === 0){
-                 losses++ 
-                 down.innerHTML = losses;
-                 resetGame();
-                 alert("You lost!")
-                 }
-                else {
-                //guessesLeft--
-                over.innerHTML = guessesLeft;
-                }
-
-
-// inner HTML reposndes to classes and ID's text content does
-
-
-
-console.log(guessesLeft);
-console.log(losses);
-            }
-
-
-
-
+            <footer>
+<span class="d-block p-2 bg-primary text-white"><p>Wins :<span id="wins"></span></p></span>
+<span class="d-block p-2 bg-dark text-white"><p>Losses :<span id="losses"></span></p></span>
+<span class="d-block p-2 bg-primary text-white"><p>Guesses Left <span id="guessesLeft">9</span></p></span>
+<span class="d-block p-2 bg-dark text-white"><p>Your Guesses so Far <span id="userLetter"></span</p></span>
      
 
 
-            // action function will take letter guessed and push into guessedLetter var
-            // guessLeft decreaes by one  --
-            // check to see if guesses left is = to 0 
-            // incrament losses by one
-            // reset game 
-
-
       
+</footer>
 
-        
-
-
-            
-
-
-
-
-
-
-
-
-
-
-//end of on key press
-        }
-
-        </script>
-        
     </body>
 </html>

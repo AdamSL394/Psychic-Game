@@ -1,0 +1,40 @@
+.jumbotron{
+    margin-bottom: 0px;
+    height: 600px;
+    background-image: url("http://getwallpapers.com/wallpaper/full/0/b/8/284236.jpg");
+    z-index: 1;
+}
+ .container{
+text-align: center;
+
+}
+.display-4{
+    margin-top: 50px;
+    color:yellow;
+}
+.display-4:hover{
+    margin-top: 70px;
+    color:aqua;
+}
+.lead{
+    color: purple;
+    font-size: 29px;
+    font-family:'Lobster', cursive;
+}
+.lead:hover{
+    color: yellowgreen;
+    font-size: 31px;
+    font-family:'Lobster', cursive;
+}
+#yay{
+    height: 30px;
+    width: 55px;
+    padding-top: 15px;
+}
+.d-block{
+    text-align: center;
+    z-index: 2;
+}
+footer{
+
+}
