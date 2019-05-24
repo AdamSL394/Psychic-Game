@@ -48,7 +48,7 @@ var guessLetter = event.key
          
         //  point.innerHTML = wins;
          document.getElementById("wins").innerHTML = wins;
-         confirm(" You have just won!!")
+         prompt(" You have just won!! Best game ever, what would you grade it an A?? :) ")
         }
         //  else if guessesLeft = 0 we increase losses by 1 and reset game and alert you lost !
          else if (guessesLeft === 0){
@@ -56,7 +56,7 @@ var guessLetter = event.key
             resetGame();
             losses++ 
             document.getElementById("losses").innerHTML = losses;
-            confirm("You lost!")
+            prompt("You lost! The Master Mind behind this deserves an A, no ???")
         }
         // else guesses are recorded
         else {
