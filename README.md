@@ -24,4 +24,4 @@ The following will get up and running locally.
 Author
 Adam Lehrer
 
-![Psychic-Game](assets/imagesPsych%20game.png)
+![Psychic-Game](Psychic-game/assets/imagesPsych%20game.png)
