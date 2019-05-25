@@ -1,7 +1,7 @@
 .jumbotron{
     margin-bottom: 0px;
     height: 600px;
-    background-image: url("http:/./wallpaper/full/0/b/8/284236.jpg");
+    background-image: url(../images/image.jpg);
     z-index: 1;
 }
  .container{
